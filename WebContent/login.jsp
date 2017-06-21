@@ -9,17 +9,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title> login </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="./assets/css/login.css">
 </head>
 <body>
 	
-	로그인
+	<div class="container logo">
+		<img src="./assets/logo/logo.png" style="width: 100%;">
+	</div>
 
-	<form action="UserLoginServlet" method="POST">
-		아이디 <input type="text" name="user_id"><br>
-		비밀번호 <input type="password" name="user_pw"><br>
-		<input type="submit" value="로그인">
-	</form>
+	<div class="container wrap">
+	
+		<form action="UserLoginServlet" method="POST">
+			
+			<div class="form-group">
+		    	<label for="user_id" class="font-color">이메일 주소</label>
+		    	<input type="email" class="form-control" id="user_id" name="user_id" placeholder="이메일을 입력하세요">
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="user_pw" class=font-color>암호</label>
+		    	<input type="password" class="form-control" id="user_pw" name="user_pw" placeholder="비밀번호를 입력하세요">
+		  	</div>
+			
+			<button type="submit" class="btn btn-default loginBtn">로그인</button>
+			
+		</form>
+		
+	</div>
+	<div class="middle">
+		<a href="signup.jsp">회원가입 하러가기</a>
+	</div>
 	
 	<%
 		if (error != null) {
@@ -30,4 +52,5 @@
 	%>
 	
 </body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </html>
